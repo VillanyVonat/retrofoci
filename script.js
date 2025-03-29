@@ -19,3 +19,19 @@ gsap.fromTo(".football",
         ease: "power1.out"
     }
 );
+
+// Replace the legend sections animation
+gsap.utils.toArray('.legend-section').forEach((section) => {
+    gsap.from(section, {
+        scrollTrigger: {
+            trigger: section,
+            start: "top 80%",
+            end: "top 20%",
+            scrub: 1,
+            // removed markers
+        },
+        y: 100,
+        opacity: 0,
+        duration: 1
+    });
+});
