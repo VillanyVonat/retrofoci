@@ -1,10 +1,17 @@
-.work-in-progress
-{
-    text-align: center;
-    color: white;
+body {
+    background-image: linear-gradient(to bottom right, teal, black);
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+    background-repeat: repeat-y;
 }
 
-body
-{
-    background-color: black;
+.RetroFoci {
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    text-align: left;
+    font-size: 3vmax;
+    padding: 20px;
+    text-decoration: none;
+    cursor: pointer;
 }

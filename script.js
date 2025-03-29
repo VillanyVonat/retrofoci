@@ -1,0 +1,1 @@
+gsap.fromTo(".RetroFoci", { x: -250, y: 0, color: "teal" }, { x: 0, y: 0, duration: 1, color: "white" });
