@@ -4,9 +4,27 @@ body {
     background-size: cover;
     margin: 0;
     background-repeat: repeat-y;
+    height: auto;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+html {
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+}
+
+html::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera */
 }
 
 .RetroFoci {
+    position: fixed;
+    z-index: 100;
     font-family: 'Courier New', Courier, monospace;
     color: white;
     text-align: left;
@@ -14,4 +32,119 @@ body {
     padding: 20px;
     text-decoration: none;
     cursor: pointer;
+}
+
+.football-container {
+    position: fixed;
+    right: 5vw;
+    top: 0;
+    height: 100vh;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.2);
+    pointer-events: none;
+}
+
+.football {
+    position: absolute;
+    width: 2vw;
+    height: 2vw;
+    left: -1vw;
+    top: 0;
+    transform: translateY(0);
+}
+
+.line {
+    position: fixed;
+    right: 6vw;
+    width: 5vw;
+    height: 1px;
+    background: white;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.8vw;
+}
+
+.line:after {
+    position: absolute;
+    right: -4vw;
+    white-space: nowrap;
+}
+
+.line.start {
+    top: 5vh;
+}
+
+.line.start:after {
+    content: 'START';
+}
+
+.line.finish {
+    bottom: 5vh;
+}
+
+.line.finish:after {
+    content: 'FINISH';
+}
+
+.legends-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.legend-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-left: 15vw;
+}
+
+.legend-content {
+    max-width: 50vw;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    scroll-snap-type: mandatory;
+}
+
+.legend-name {
+    font-size: 4vmax;
+    margin-bottom: 2vh;
+}
+
+.legend-description {
+    font-size: 1.5vmax;
+    margin-bottom: 4vh;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    /* 16:9 Aspect Ratio */
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 768px) {
+    .RetroFoci {
+        font-size: 5vmax;
+        padding: 10px;
+    }
+    .legend-section {
+        min-height: 60vh;
+        padding-left: 5vw;
+    }
+    .football-container {
+        width: 4px;
+    }
+    .line {
+        right: 3vw;
+        width: 3vw;
+    }
 }
