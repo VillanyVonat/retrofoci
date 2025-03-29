@@ -1,1 +1,21 @@
-gsap.fromTo(".RetroFoci", { x: -250, y: 0, color: "teal" }, { x: 0, y: 0, duration: 1, color: "white" });
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.fromTo(".RetroFoci", 
+    { x: -250, y: 0, color: "teal" }, 
+    { x: 0, y: 0, duration: 1, color: "white" }
+);
+
+gsap.fromTo(".football", 
+    { y: "5vh", rotation: 0 },
+    {
+        scrollTrigger: {
+            trigger: "body",
+            start: "top top",
+            end: "bottom bottom",
+            scrub: 2,
+        },
+        y: "92vh",
+        rotation: 720,
+        ease: "power1.out"
+    }
+);

@@ -7,6 +7,8 @@ body {
 }
 
 .RetroFoci {
+    position: fixed;
+    z-index: 100;
     font-family: 'Courier New', Courier, monospace;
     color: white;
     text-align: left;
@@ -14,4 +16,56 @@ body {
     padding: 20px;
     text-decoration: none;
     cursor: pointer;
+}
+
+.football-container {
+    position: fixed;
+    right: 5vw;
+    top: 0;
+    height: 100vh;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.2);
+    pointer-events: none;
+}
+
+.football {
+    position: absolute;
+    width: 2vw;
+    height: 2vw;
+    left: -1vw;
+    top: 0;
+    transform: translateY(0);
+}
+
+.line {
+    position: fixed;
+    right: 6vw;
+    width: 5vw;
+    height: 1px;
+    background: white;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.8vw;
+}
+
+.line:after {
+    position: absolute;
+    right: -4vw;
+    white-space: nowrap;
+}
+
+.line.start {
+    top: 5vh;
+}
+
+.line.start:after {
+    content: 'START';
+}
+
+.line.finish {
+    bottom: 5vh;
+}
+
+.line.finish:after {
+    content: 'FINISH';
 }
